@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { escapeLeadingUnderscores } from 'typescript';
+import ClasePrueba from './ClasePrueba';
+import { FuncionPrueba } from './FuncionPrueba';
+import { ListadoDummy } from './ListadoDummy';
 
 interface Egreso {
   descripcion: string;
@@ -11,27 +14,33 @@ interface Egreso {
 
 function App() {
 
-  const listaEgresos : Egreso[] = [];
+  const listaEgresos: Egreso[] = [];
 
-  listaEgresos.push({descripcion: 'Supermercado', valor: 5000})
-  listaEgresos.push({descripcion: 'Panaderia', valor: 2500})
-  listaEgresos.push({descripcion: 'Compras en Linea', valor: 45000})
-  listaEgresos.push({descripcion: 'Agua', valor: 3000})
-  listaEgresos.push({descripcion: 'Electricidad', valor: 10000})
+  listaEgresos.push({ descripcion: 'Supermercado', valor: 5000 })
+  listaEgresos.push({ descripcion: 'Panaderia', valor: 2500 })
+  listaEgresos.push({ descripcion: 'Compras en Linea', valor: 45000 })
+  listaEgresos.push({ descripcion: 'Agua', valor: 3000 })
+  listaEgresos.push({ descripcion: 'Electricidad', valor: 10000 })
 
 
 
   return (
-    <div className="App">
-      <h1>Lista de Gastos</h1>
+    <>
+      <div className="App">
+        <h1>Lista de Gastos</h1>
         <ul>
-          {listaEgresos.map((egreso) => {
-          return (  
-          <li> {egreso.descripcion} =&gt; {egreso.valor} </li>
-          )
-          })}          
+          {listaEgresos.map((egreso, index) => {
+            return (
+              <li key={index}> {egreso.descripcion} =&gt; {egreso.valor} </li>
+            )
+          })}
         </ul>
-    </div>
+      </div>
+
+      <ClasePrueba />
+      <FuncionPrueba/>
+      <ListadoDummy/>
+    </>
   );
 }
 
