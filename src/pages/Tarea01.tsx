@@ -1,4 +1,5 @@
 import React from "react";
+import { DashboardLayout } from "../components/Layout";
 
 
 interface TareaPorHacer {
@@ -13,9 +14,9 @@ export type Todo = {
     completed: boolean;
 };
 
-export const ListadoDummy: React.FC = () => {
-    const [data, setData] = React.useState<Todo[] | undefined> (undefined);
+export const Tarea01: React.FC = () => {
 
+    const [data, setData] = React.useState<Todo[] | undefined>(undefined);
     async function getTodos() {
         const resultList: Array<Todo> = [];
 
@@ -33,8 +34,7 @@ export const ListadoDummy: React.FC = () => {
                 completed: item.completed
             }
             resultList.push(tempItem);
-        });
-        //console.log(resultList);
+        });        
         setData(resultList);
     }
 
@@ -42,17 +42,19 @@ export const ListadoDummy: React.FC = () => {
         getTodos();
     }, []);
 
+
+
+
     return (
-        <>
+        <DashboardLayout>
             <h1>Lista de Datos</h1>
             <ul>
-                {data?.map((item, index) => {
-                    console.log(item);
+                {data?.map((item, index) => {                    
                     return (
-                        <li key={index}> {item.id} =&gt; {item.userId} =&gt; {item.title} =&gt; {item.completed? "true": "false"} </li>
+                        <li key={index}> {item.id} =&gt; {item.userId} =&gt; {item.title} =&gt; {item.completed ? "true" : "false"} </li>
                     )
                 })}
             </ul>
-        </>
+        </DashboardLayout>
     )
 }
