@@ -2,12 +2,7 @@ import React from "react";
 import { DashboardLayout } from "../components/Layout";
 
 
-interface TareaPorHacer {
-    titulo: string,
-    descripcion?: string
-}
-
-export type Todo = {
+export type Data = {
     userId: number;
     id: number;
     title: string;
@@ -16,9 +11,9 @@ export type Todo = {
 
 export const Tarea01: React.FC = () => {
 
-    const [data, setData] = React.useState<Todo[] | undefined>(undefined);
-    async function getTodos() {
-        const resultList: Array<Todo> = [];
+    const [data, setData] = React.useState<Data[] | undefined>(undefined);
+    async function getData() {
+        const resultList: Array<Data> = [];
 
         const result = await fetch("https://jsonplaceholder.typicode.com/todos")
             .then(response => {
@@ -26,8 +21,8 @@ export const Tarea01: React.FC = () => {
             })
             .then(res => res);
 
-        result.forEach(function (item: Todo) {
-            const tempItem: Todo = {
+        result.forEach(function (item: Data) {
+            const tempItem: Data = {
                 userId: item.userId,
                 id: item.id,
                 title: item.title,
@@ -39,11 +34,8 @@ export const Tarea01: React.FC = () => {
     }
 
     React.useEffect(() => {
-        getTodos();
+        getData();
     }, []);
-
-
-
 
     return (
         <DashboardLayout>

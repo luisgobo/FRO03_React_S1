@@ -15,15 +15,22 @@ export const NavSidebar = () => {
         <React.Fragment>
             {/* Sidebar Overlay */}
             <div
-                onClick={() => setIsSidebarOpen(false)}
-                className={`fixed inset-0 z-20 block transition-opacity bg-black opacity-50 lg:hidden ${isSidebarOpen ? "block" : "hidden"
-                    }`}
+                onClick={() => {
+                        setIsSidebarOpen(false)                                                
+                    }
+                }
+                className={ 
+                    `fixed inset-0 z-20 block transition-opacity bg-black opacity-50 lg:hidden ${isSidebarOpen ? "block" : "hidden"}`                    
+                }
             />
 
             <div>
                 <button
                     className="btn-menu"
-                    onClick={(): void => setIsSidebarOpen(true)}
+                    onClick={ (): void => {
+                            setIsSidebarOpen(true)                            
+                        } 
+                    }
                     type="button"
                 >
                     <Icon name="burger" className="w-6 h-6" />
@@ -52,14 +59,15 @@ export const NavSidebar = () => {
                             title: "Home",
                             itemId: "/HomePage",
                             // Optional
-                            elemBefore: () => <Icon name="coffee" />
+                            elemBefore: () => <Icon name="check-circle" />
                         },
                         {
                             title: "Tarea 01",
                             itemId: "/Tarea01",
                             // Optional
-                            elemBefore: () => <Icon name="coffee" />
+                            elemBefore: () => <Icon name="check-circle" />
                         },
+                        
                         // {
                         //     title: "Tarea01",
                         //     itemId: "/Tarea01",
