@@ -1,7 +1,7 @@
 import Icon from "awesome-react-icons";
 import React from "react";
-import { DashboardLayout } from "../../components/Layout";
-import '../../styles/tarea01.css'
+import { DashboardLayout } from "../../../components/Layout";
+import '../../../styles/tarea01.css'
 
 
 export type Data = {

@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Home";
 import Settings from "./Settings";
-import { Tarea01Funciones } from "./Tarea01/Tarea01Funciones";
-import { Tarea01Clases } from "./Tarea01/Tarea01Clases";
+import { Tarea01Funciones } from "./Tareas/Tarea01/Tarea01Funciones";
+import { Tarea01Clases } from "./Tareas/Tarea01/Tarea01Clases";
 
 const RouterLinks = () => {
   return (
