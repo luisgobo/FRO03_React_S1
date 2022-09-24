@@ -11,20 +11,12 @@ export type Data = {
     completed: boolean;
 };
 
-// export const Tarea01Clases: React.FC = () => {
-// //Hacerlo en modo clase
-//     return (<> Pendiente</>);
-    
-// }
-
-
-
 export const Tarea01Clases = () => {
-  return (
-    <DashboardLayout>
-      <h2>Pendiente</h2>
-    </DashboardLayout>
-  )
+    return (
+        <DashboardLayout>
+            <h2>Pendiente</h2>
+        </DashboardLayout>
+    )
 }
 
 export default Tarea01Clases;

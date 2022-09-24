@@ -11,7 +11,7 @@ export const DashboardLayout = ({ children }) => {
                 <NavSidebar />
 
                 <div className="flex flex-col flex-1 overflow-hidden div-vertical-scroll">
-                    <main className="content">
+                    <main className="content div-vertical-scroll">
                         <section className="sm:flex-row flex flex-col flex-1">
                             <div className="content-box" style={{ flexGrow: 2, flexBasis: "0%"}} >
                                 {children}
@@ -23,12 +23,3 @@ export const DashboardLayout = ({ children }) => {
         </BodyWrapper>
     );
 };
-
-
-/*
- .div-vertical-scroll {
-    flex: 1;
-    background: #aaa;
-    overflow-y: scroll;
-  }
-*/
