@@ -41,21 +41,26 @@ export const Tarea01Funciones: React.FC = () => {
 
     return (
         <DashboardLayout>
-            <h1>Lista de Datos</h1>
-            <ul>
-                {data?.map((item, index) => {
+            <h1 className="titulo">Lista de Datos con funciones</h1>
+            <ul className="formato">
+                {data?.map((item) => {
                     return (
-                        <li key={index}>
+                        <li key={item.id}>
                             <div className="card">
                                 <div className="container">
-                                    <h4><b>ID: {item.id}</b></h4>
-                                    <p>{item.title}</p>
                                     <div className="divWrapper">
-                                        <div className="Left">Completed:</div>
-                                        <div className="divRight">{item.completed ? <Icon name="check" /> : <Icon name="x" />}</div>
+                                        <div className="divLeft">
+                                            <h4><b>ID: {item.id}</b></h4>
+                                        </div>
+                                        <div className="divCenter">
+                                            <div className="divLeft">Completed:</div>
+                                            <div className="divRight">
+                                                {item.completed ? <Icon name="check" className="green-icon" /> : <Icon name="x" className="red-icon" />}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p> </p>
-                                </div>
+                                    <p>Dexscription:  {item.title}</p>
+                                </div>                                
                             </div>
                         </li>
                     )

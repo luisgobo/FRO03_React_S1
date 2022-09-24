@@ -1,3 +1,15 @@
+h1.titulo{
+    font-size: 35px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+ul.formato{
+    padding-left: 10px;
+}
+
+
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -15,22 +27,41 @@ img {
 
 .container {
     padding: 2px 16px;
+    margin-bottom: 15px;
 }
 
 .divWrapper{
-    width: 200px;
+    width: 100%;
     /* border: 1px solid black; */
     overflow: hidden; /* add this to contain floated children */
+    /* background-color: green; */
+}
+
+.divLeft{
+    width: 85px;
+    overflow: hidden;
+    float: left;    
+}
+
+.divCenter{
+    width: auto;
+    float:right;
 }
 
 .divRight{
-    width: 60%;
-    float:left; /* add this */
-    /* border: 1px solid red; */
+    width: auto;
+    float:right;
+    
+    
+    margin-left: auto; 
+    margin-right: 0;    
 }
-.divLeft{
-    width: 40%;
-    overflow: hidden;
-    /* border: 1px solid green; */
-    /* float: left; add this */
+
+.green-icon{
+    color: green;
 }
+
+.red-icon{
+    color: red;
+}
+
