@@ -9,6 +9,8 @@ export const DashboardLayout = ({ children }) => {
             <div className="flex h-screen bg-gray-200">
                 <NavSidebar />
 
+                
+
                 <div className="flex flex-col flex-1 overflow-hidden">
                     <main className="content">
                         <section className="sm:flex-row flex flex-col flex-1">
