@@ -1,6 +1,6 @@
 import Icon from "awesome-react-icons";
 import React from "react";
-import { DashboardLayout } from "../../../components/Layout";
+import { DashboardLayout } from "../../../components/dashboard/Layout";
 import '../../../styles/tarea01.css'
 
 

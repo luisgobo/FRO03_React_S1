@@ -2,7 +2,7 @@ import React from "react";
 
 import { NavSidebar } from "./NavSidebar";
 import BodyWrapper from "./BodyWrapper";
-import '../styles/scroll.css';
+import '../../styles/scroll.css';
 
 export const DashboardLayout = ({ children }) => {
     return (
