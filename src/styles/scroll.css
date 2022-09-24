@@ -1,0 +1,5 @@
+.div-vertical-scroll {
+    flex: 1;
+    /*background: #aaa;*/
+    overflow-y: scroll;    
+  }

@@ -2,6 +2,7 @@ import React from "react";
 
 import { NavSidebar } from "./NavSidebar";
 import BodyWrapper from "./BodyWrapper";
+import '../styles/scroll.css';
 
 export const DashboardLayout = ({ children }) => {
     return (
@@ -9,15 +10,10 @@ export const DashboardLayout = ({ children }) => {
             <div className="flex h-screen bg-gray-200">
                 <NavSidebar />
 
-                
-
-                <div className="flex flex-col flex-1 overflow-hidden">
+                <div className="flex flex-col flex-1 overflow-hidden div-vertical-scroll">
                     <main className="content">
                         <section className="sm:flex-row flex flex-col flex-1">
-                            <div
-                                className="content-box"
-                                style={{ flexGrow: 2, flexBasis: "0%" }}
-                            >
+                            <div className="content-box" style={{ flexGrow: 2, flexBasis: "0%"}} >
                                 {children}
                             </div>
                         </section>
@@ -27,3 +23,12 @@ export const DashboardLayout = ({ children }) => {
         </BodyWrapper>
     );
 };
+
+
+/*
+ .div-vertical-scroll {
+    flex: 1;
+    background: #aaa;
+    overflow-y: scroll;
+  }
+*/

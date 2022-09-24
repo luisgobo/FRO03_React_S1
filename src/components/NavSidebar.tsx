@@ -57,47 +57,32 @@ export const NavSidebar = () => {
                     items={[
                         {
                             title: "Home",
-                            itemId: "/HomePage",
-                            // Optional
+                            itemId: "/HomePage",                            
                             elemBefore: () => <Icon name="check-circle" />
                         },
+                        // {
+                        //     title: "Tarea 01- Funciones",
+                        //     itemId: "/Tarea01",                            
+                        //     elemBefore: () => <Icon name="check-circle" />
+                        // },                        
                         {
-                            title: "Tarea 01",
-                            itemId: "/Tarea01",
-                            // Optional
-                            elemBefore: () => <Icon name="check-circle" />
-                        },
-                        
-                        // {
-                        //     title: "Tarea01",
-                        //     itemId: "/Tarea01",
-                        //     elemBefore: () => <Icon name="user" />,
-                        //     subNav: [
-                        //         {
-                        //             title: "Projects",
-                        //             itemId: "/about/projects",
-                        //             // Optional
-                        //             elemBefore: () => <Icon name="cloud-snow" />
-                        //         },
-                        //         {
-                        //             title: "Members",
-                        //             itemId: "/about/members",
-                        //             elemBefore: () => <Icon name="coffee" />
-                        //         }
-                        //     ]
-                        // },
-                        // {
-                        //     title: "Another Tab",
-                        //     itemId: "/another",
-                        //     subNav: [
-                        //         {
-                        //             title: "Teams",
-                        //             itemId: "/another/teams"
-                        //             // Optional
-                        //             // elemBefore: () => <Icon name="calendar" />
-                        //         }
-                        //     ]
-                        // }
+                            title: "Tarea01",
+                            itemId: "",
+                            elemBefore: () => <Icon name="check-circle" />,
+                            subNav: [
+                                {
+                                    title: "Con Funciones",
+                                    itemId: "/Tarea01/funciones",
+                                    // Optional
+                                    elemBefore: () => <Icon name="check-square" />
+                                },
+                                {
+                                    title: "Con clases",
+                                    itemId: "/Tarea01/clases",
+                                    elemBefore: () => <Icon name="check-square" />
+                                }
+                            ]
+                        },                        
                     ]}
                 />
 

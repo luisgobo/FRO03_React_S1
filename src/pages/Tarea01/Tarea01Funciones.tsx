@@ -1,7 +1,7 @@
 import Icon from "awesome-react-icons";
 import React from "react";
-import { DashboardLayout } from "../components/Layout";
-import '../styles/tarea01.css'
+import { DashboardLayout } from "../../components/Layout";
+import '../../styles/tarea01.css'
 
 
 export type Data = {
@@ -11,7 +11,7 @@ export type Data = {
     completed: boolean;
 };
 
-export const Tarea01: React.FC = () => {
+export const Tarea01Funciones: React.FC = () => {
 
     const [data, setData] = React.useState<Data[] | undefined>(undefined);
     async function getData() {
@@ -54,7 +54,6 @@ export const Tarea01: React.FC = () => {
                                         <div className="Left">Completed:</div>
                                         <div className="divRight">{item.completed ? <Icon name="check" /> : <Icon name="x" />}</div>
                                     </div>
-
                                     <p> </p>
                                 </div>
                             </div>
