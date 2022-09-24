@@ -41,7 +41,7 @@ export const Tarea01Funciones: React.FC = () => {
 
     return (
         <DashboardLayout>
-            <h1 className="titulo">Lista de Datos con funciones</h1>
+            <h1 className="title">Lista de Datos con funciones</h1>
             <ul className="formato">
                 {data?.map((item) => {
                     return (

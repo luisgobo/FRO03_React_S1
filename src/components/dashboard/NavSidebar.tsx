@@ -56,7 +56,7 @@ export const NavSidebar = () => {
                     }}
                     items={[
                         {
-                            title: "Home",
+                            title: "Inicio",
                             itemId: "/HomePage",                            
                             elemBefore: () => <Icon name="check-circle" />
                         },
@@ -66,7 +66,7 @@ export const NavSidebar = () => {
                         //     elemBefore: () => <Icon name="check-circle" />
                         // },                        
                         {
-                            title: "Tarea01",
+                            title: "Tarea 1",
                             itemId: "",
                             elemBefore: () => <Icon name="check-circle" />,
                             subNav: [
