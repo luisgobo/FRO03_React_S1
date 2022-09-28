@@ -23,10 +23,8 @@ img {
 }
 
 .divWrapper{
-    width: 100%;
-    /* border: 1px solid black; */
-    overflow: hidden; /* add this to contain floated children */
-    /* background-color: green; */
+    width: 100%;    
+    overflow: hidden;    
 }
 
 .divLeft{

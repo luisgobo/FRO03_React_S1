@@ -24,16 +24,15 @@ export const CardIfo: React.FC<ItemTaskProps> = ({
         return onChange(taskInfo);
     }
 
-    console.log(userInfo);
-    console.log();
-
     return (
         <li key={taskInfo.id}>
             <div className="card">
                 <div className="container">
                     <div className="divWrapper">
                         <div className="divLeft">
-                            <h4><b>ID: {taskInfo.id} - Asignee: {userInfo && `${userInfo.name}`}</b></h4>
+                            <h4><b>Task ID: {taskInfo.id} </b> </h4>
+                            <h4><b>Asigned to: {userInfo && `${userInfo.name}`}</b> (ID: {taskInfo.id}) </h4>
+                            <h4>{userInfo && `${userInfo.email}`}</h4>
                         </div>
                         <div className="divRight">                        
                             <div className="divUp">
@@ -59,7 +58,7 @@ export const CardIfo: React.FC<ItemTaskProps> = ({
                             </div>
                         </div>
                     </div>
-                    <p>Description:  {taskInfo.title}</p>
+                    <p> <b>Description: </b> {taskInfo.title}</p>
                 </div>
             </div>
         </li>
