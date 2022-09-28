@@ -36,7 +36,7 @@ export default class Tarea01Clases extends Component<Props, DataArray> {
         })
         .then(res => res);
 
-      result.forEach(function (item: Data) {
+        result.slice(0,10).forEach(function (item: Data) {
         const tempItem: Data = {
           userId: item.userId,
           id: item.id,

@@ -30,9 +30,15 @@ img {
 }
 
 .divLeft{
+    width: 70%;
+    overflow: hidden;
+    float: left;           
+}
+
+.divBoxLeft{
     width: 85px;
     overflow: hidden;
-    float: left;    
+    float: left;     
 }
 
 .divCenter{
@@ -43,10 +49,25 @@ img {
 .divRight{
     width: auto;
     float:right;
-    
-    
     margin-left: auto; 
-    margin-right: 0;    
+    margin-right: 0;
+    padding-right: 5px;
+}
+
+.divBoxRight{
+    width: auto;
+    float:right;
+    margin-left: auto; 
+    margin-right: 0;
+    padding-right: 5px;
+}
+
+.divUp{
+    padding-left: 15px;
+}
+.divDown{
+    padding-top: 30px;
+    padding-right: 7px;    
 }
 
 .green-icon{

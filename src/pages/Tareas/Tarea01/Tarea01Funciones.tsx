@@ -1,39 +1,54 @@
-import Icon from "awesome-react-icons";
 import React from "react";
 import { DashboardLayout } from "../../../components/dashboard/Layout";
+import { CardIfo } from "../../../components/general/CardInfo";
+import { ITask } from "../../../models/ITask";
+import { IUsuario } from "../../../models/IUsuario";
 import '../../../styles/tarea01.css'
 
 
-export type Data = {
-    userId: number;
-    id: number;
-    title: string;
-    completed: boolean;
-};
-
 export const Tarea01Funciones: React.FC = () => {
 
-    const [data, setData] = React.useState<Data[] | undefined>(undefined);
+    const [listaTodos, setListaTodos] = React.useState<ITask[] | undefined>(undefined);
+    const [listaUsuarios, setListaUsuarios] = React.useState<IUsuario[] | undefined>(undefined);
+
     async function getData() {
-        const resultList: Array<Data> = [];
 
-        const result = await fetch("https://jsonplaceholder.typicode.com/todos")
-            .then(response => {
-                return response.json();
-            })
-            .then(res => res);
+        try {
 
-        result.forEach(function (item: Data) {
-            const tempItem: Data = {
-                userId: item.userId,
-                id: item.id,
-                title: item.title,
-                completed: item.completed
-            }
-            resultList.push(tempItem);
-        });
-        setData(resultList);
+            const [respuestaTodos, respuestaUsuarios] = await Promise.all([
+                await fetch("https://jsonplaceholder.typicode.com/todos"),
+                await fetch("https://jsonplaceholder.typicode.com/users"),
+            ]);
+
+            const [datosTodos, datosUsuarios] = await Promise.all([
+                respuestaTodos.json(),
+                respuestaUsuarios.json()
+            ]);
+
+            setListaTodos(datosTodos);
+            setListaUsuarios(datosUsuarios);
+
+        } catch (error) {
+
+        }
     }
+
+    const onChange = (value: ITask, indice: number) => {
+        if (listaTodos) {
+            const backupList = [...listaTodos];
+            const tarea = {
+                ...backupList[indice],
+                body: value,
+            };
+            backupList[indice] = tarea;
+
+            setListaTodos(backupList);
+        }
+    };
+
+    const getUsuarioPorId = (id: number) => {
+        return listaUsuarios?.find((usuario) => usuario.id === id);
+    };
 
     React.useEffect(() => {
         getData();
@@ -43,28 +58,19 @@ export const Tarea01Funciones: React.FC = () => {
         <DashboardLayout>
             <h1 className="title">Lista de Datos con funciones</h1>
             <ul className="formato">
-                {data?.map((item) => {
-                    return (
-                        <li key={item.id}>
-                            <div className="card">
-                                <div className="container">
-                                    <div className="divWrapper">
-                                        <div className="divLeft">
-                                            <h4><b>ID: {item.id}</b></h4>
-                                        </div>
-                                        <div className="divCenter">
-                                            <div className="divLeft">Completed:</div>
-                                            <div className="divRight">
-                                                {item.completed ? <Icon name="check" className="green-icon" /> : <Icon name="x" className="red-icon" />}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>Dexscription:  {item.title}</p>
-                                </div>                                
-                            </div>
-                        </li>
-                    )
-                })}
+                {/* Se puede castear a booleano? */}
+                {listaTodos &&
+                    listaTodos.map((task, index) => (
+                        <CardIfo
+                            key={task.id}
+                            taskInfo={task}
+                            userInfo={getUsuarioPorId(task.userId)}
+                            onChange={(event: ITask) =>
+                                onChange(event, index)
+                            }
+                        />
+                    ))
+                }
             </ul>
         </DashboardLayout>
     )
