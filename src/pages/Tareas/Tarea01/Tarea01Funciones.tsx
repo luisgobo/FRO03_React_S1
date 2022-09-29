@@ -57,8 +57,7 @@ export const Tarea01Funciones: React.FC = () => {
     return (
         <DashboardLayout>
             <h1 className="title">Lista de Datos con funciones</h1>
-            <ul className="formato">
-                {/* Se puede castear a booleano? */}
+            <ul className="formato">                
                 {listaTodos &&
                     listaTodos.map((task, index) => (
                         <CardIfo

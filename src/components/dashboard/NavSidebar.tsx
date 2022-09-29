@@ -71,18 +71,23 @@ export const NavSidebar = () => {
                             elemBefore: () => <Icon name="check-circle" />,
                             subNav: [
                                 {
+                                    title: "Con clases",
+                                    itemId: "/Tarea01/clases",
+                                    elemBefore: () => <Icon name="check-square" />
+                                },
+                                {
                                     title: "Con Funciones",
                                     itemId: "/Tarea01/funciones",
                                     // Optional
                                     elemBefore: () => <Icon name="check-square" />
-                                },
-                                {
-                                    title: "Con clases",
-                                    itemId: "/Tarea01/clases",
-                                    elemBefore: () => <Icon name="check-square" />
-                                }
+                                },                                
                             ]
-                        },                        
+                        },
+                        {
+                            title: "Tarea 2",
+                            itemId: "/Tarea02",
+                            elemBefore: () => <Icon name="check-circle" />,                            
+                        },                     
                     ]}
                 />
 
