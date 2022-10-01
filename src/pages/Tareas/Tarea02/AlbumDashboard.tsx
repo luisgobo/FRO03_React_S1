@@ -60,6 +60,7 @@ export const AlbumDashboard: React.FC<AlbumDashboardProps> = ({
         });
 
         setImageList(filteredPhotos);
+        setSelectedImageUrl("");
     };
 
     React.useEffect(() => {
@@ -88,16 +89,21 @@ export const AlbumDashboard: React.FC<AlbumDashboardProps> = ({
                             <h1 className="title">Photos</h1>
                         </div>
                         <div className="div-side-by-side--vertical-overflow">
-                            <Gallery
-                                images={imageList}
-                                onClick={(imgIndex) => getImageUrl(imgIndex)}
-                            />
+                            {imageList.length > 0? 
+                                <Gallery
+                                    images={imageList}
+                                    onClick={(imgIndex) => getImageUrl(imgIndex)}
+                                />
+                                : <b><h1>Pick an album to see the list</h1></b>
+                        }
                         </div>
                     </div>
                 </div>
                 <div>
                     <h1 className="title div-side-by-side-title">Preview</h1>
-                    <ImageViewer url={selectedImageUrl} />
+                    <ImageViewer 
+                        url={selectedImageUrl}
+                    />
                 </div>
             </div>
         </>

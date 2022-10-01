@@ -1,4 +1,3 @@
-import Icon from 'awesome-react-icons';
 import React from 'react'
 import { IAlbum } from '../../models/IAlbum';
 import { IUsuario } from '../../models/IUsuario';
