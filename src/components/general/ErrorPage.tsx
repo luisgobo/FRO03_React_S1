@@ -1,4 +1,3 @@
-import Icon from 'awesome-react-icons';
 import React from 'react'
 import { IErrorInfo } from '../../models/IErrorInfo';
 import '../../styles/errorInfo.css'
@@ -9,7 +8,7 @@ export interface ItemErrorProps {
 }
 
 export const ErrorPage: React.FC<ItemErrorProps> = ({
-    errorInfo: errorInfo,
+    errorInfo,
 }) => {
 
     return (

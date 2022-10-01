@@ -1,9 +1,7 @@
-/* eslint-disable react/display-name, jsx-a11y/click-events-have-key-events */
+import React, { useState } from "react";
 import { Navigation } from "react-minimal-side-navigation";
 import { useNavigate, useLocation } from "react-router-dom";
 import Icon from "awesome-react-icons";
-import React, { useState } from "react";
-
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
 export const NavSidebar = () => {
