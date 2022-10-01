@@ -24,12 +24,16 @@ export const AlbumViewer: React.FC<AlbumViewerProps> = (
         return userList?.find((user) => user.id === userId);
     }
 
+    React.useEffect(() => {    
+        
+    }, [])    
+
     return (
         <>
             <ul>
-                {albumList?.map((album, index) => (
+                {albumList && albumList.map((album, index) => (
                     <AlbumCardInfo
-                        index = {index}
+                        index = {index}                        
                         albumInfo={album}
                         userInfo={getUserInfoByAlbum(album.userId)}
                         onChange={onChange}

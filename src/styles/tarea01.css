@@ -33,6 +33,13 @@ img {
     float: left;           
 }
 
+.div-side-by-side--vertical-overflow{
+    height: 250px;
+    width: 50% !important;
+    flex: 2;
+    overflow-y: scroll;    
+}
+
 .divBoxLeft{
     width: 85px;
     overflow: hidden;

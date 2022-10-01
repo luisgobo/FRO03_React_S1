@@ -69,8 +69,7 @@ export const Tarea02: React.FC = () => {
                     <AlbumDashboard
                         albumList={albumList}
                         photoList={photoList}
-                        userList = {usrList}
-                        onSelect={(event: string) => onChange(event)}
+                        userList = {usrList}                        
                     />
                 </DashboardLayout>
             }
