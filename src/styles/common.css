@@ -1,4 +1,4 @@
-ul.formato{
+ul.formato {
     padding-left: 10px;
 }
 
@@ -13,6 +13,10 @@ ul.formato{
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card-selected {
+    background-color: #dadadd;
+}
+
 img {
     border-radius: 5px 5px 0 0;
 }
@@ -22,64 +26,78 @@ img {
     margin-bottom: 15px;
 }
 
-.divWrapper{
-    width: 100%;    
-    overflow: hidden;    
+.divWrapper {
+    width: 100%;
+    overflow: hidden;
 }
 
-.divLeft{
+.divLeft {
     width: 70%;
     overflow: hidden;
-    float: left;           
+    float: left;
 }
 
-.div-side-by-side--vertical-overflow{
-    height: 250px;
+.side-by-side-positioning{
     width: 50% !important;
+}
+.div-side-by-side-title {   
+    margin-top: 10px; 
+    background-color: transparent;
+}
+
+.div-side-by-side--vertical-overflow {
+    height: 370px;    
     flex: 2;
     overflow-y: scroll;    
 }
 
-.divBoxLeft{
+.divBoxLeft {
     width: 85px;
     overflow: hidden;
-    float: left;     
+    float: left;
 }
 
-.divCenter{
+.divCenter {
     width: auto;
-    float:right;
+    float: right;
 }
 
-.divRight{
+.divRight {
     width: auto;
-    float:right;
-    margin-left: auto; 
+    float: right;
+    margin-left: auto;
     margin-right: 0;
     padding-right: 5px;
 }
 
-.divBoxRight{
+.divBoxRight {
     width: auto;
-    float:right;
-    margin-left: auto; 
+    float: right;
+    margin-left: auto;
     margin-right: 0;
     padding-right: 5px;
 }
 
-.divUp{
+.divUp {
     padding-left: 15px;
 }
-.divDown{
+
+.divDown {
     padding-top: 30px;
-    padding-right: 7px;    
+    padding-right: 7px;
 }
 
-.green-icon{
+.green-icon {
     color: green;
 }
 
-.red-icon{
+.red-icon {
     color: red;
 }
 
+.image-align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}

@@ -3,7 +3,7 @@ import { DashboardLayout } from "../../../components/dashboard/Layout";
 import { CardIfo } from "../../../components/general/CardInfo";
 import { ITask } from "../../../models/ITask";
 import { IUsuario } from "../../../models/IUsuario";
-import '../../../styles/tarea01.css'
+import '../../../styles/common.css'
 
 
 export const Tarea01Funciones: React.FC = () => {

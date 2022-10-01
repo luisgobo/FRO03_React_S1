@@ -7,7 +7,7 @@ export interface ImageViewerProps {
 
 export const ImageViewer: React.FC<ImageViewerProps> = ({ url }) => {
     return (<>
-        <div>
+        <div className='image-align-center'>
             <img
                 src={url !== '' ? url : notAvailable}
                 alt={url !== '' ? url : "Not available"}

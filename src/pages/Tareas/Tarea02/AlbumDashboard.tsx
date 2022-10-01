@@ -5,7 +5,7 @@ import { ImageViewer } from "./ImageViewer";
 import { Gallery, Image } from "react-grid-gallery";
 import { AlbumViewer } from "./AlbumViewer";
 import { IUsuario } from "../../../models/IUsuario";
-import '../../../styles/tarea01.css'
+import '../../../styles/common.css'
 import '../../../styles/scroll.css';
 
 export interface AlbumDashboardProps {
@@ -32,7 +32,7 @@ export const AlbumDashboard: React.FC<AlbumDashboardProps> = ({
             ...backupList[currentActiveIndex],
             isSelected: false,
         };
-        
+
         const elementUpdated = {
             ...backupList[newImageIndex],
             isSelected: true,
@@ -71,24 +71,32 @@ export const AlbumDashboard: React.FC<AlbumDashboardProps> = ({
             <h1 className="title">Photo Album</h1>
             <div className="container">
                 <div className="divWrapper">
-                    <div className="divLeft div-side-by-side--vertical-overflow">
-                        <h1 className="title">Albums</h1>
-                        <AlbumViewer
-                            albumList={albumList}
-                            userList={userList}
-                            onSelected={handleImageList}
-                        />
+                    <div className="divLeft side-by-side-positioning">
+                        <div className="div-side-by-side-title">
+                            <h1 className="title ">Albums</h1>
+                        </div>
+                        <div className="div-side-by-side--vertical-overflow">
+                            <AlbumViewer
+                                albumList={albumList}
+                                userList={userList}
+                                onSelected={handleImageList}
+                            />
+                        </div>
                     </div>
-                    <div className="divRight div-side-by-side--vertical-overflow">
-                        <h1 className="title">Photos</h1>
-                        <Gallery
-                            images={imageList}
-                            onClick={(imgIndex) => getImageUrl(imgIndex)}
-                        />
+                    <div className="divRight side-by-side-positioning">
+                        <div className="div-side-by-side-title">
+                            <h1 className="title">Photos</h1>
+                        </div>
+                        <div className="div-side-by-side--vertical-overflow">
+                            <Gallery
+                                images={imageList}
+                                onClick={(imgIndex) => getImageUrl(imgIndex)}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <h1 className="title">Preview</h1>
+                    <h1 className="title div-side-by-side-title">Preview</h1>
                     <ImageViewer url={selectedImageUrl} />
                 </div>
             </div>

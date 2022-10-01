@@ -16,8 +16,11 @@ export const AlbumViewer: React.FC<AlbumViewerProps> = (
         onSelected
     }) => {
 
+    const [albumSelectedId, setAlbumSelectedId] = React.useState<number>(-1);
+
     const onChange = (albumId: number) => {
         onSelected(albumId)
+        setAlbumSelectedId(albumId);
     };
 
     function getUserInfoByAlbum(userId: number): IUsuario | undefined {
@@ -33,6 +36,7 @@ export const AlbumViewer: React.FC<AlbumViewerProps> = (
             <ul>
                 {albumList && albumList.map((album, index) => (
                     <AlbumCardInfo
+                        albumSelected= {albumSelectedId == album.id ? true : false}
                         index = {index}                        
                         albumInfo={album}
                         userInfo={getUserInfoByAlbum(album.userId)}

@@ -6,6 +6,7 @@ import { IUsuario } from '../../models/IUsuario';
 
 export interface AlbumCardProps {    
     index: number;
+    albumSelected: boolean;
     albumInfo: IAlbum;
     userInfo: IUsuario | undefined;
     onChange: any;
@@ -13,6 +14,7 @@ export interface AlbumCardProps {
 
 export const AlbumCardInfo: React.FC<AlbumCardProps> = ({    
     index,
+    albumSelected,
     albumInfo,
     userInfo,
     onChange,
@@ -28,7 +30,7 @@ export const AlbumCardInfo: React.FC<AlbumCardProps> = ({
 
     return (
         <li key={`${index}-${albumInfo?.id}`} onClick={() => handleSelection(albumInfo?.id)}>
-            <div className="card">
+            <div className= {albumSelected? "card card-selected": "card"}>
                 <div className="container">
                     <div className="divWrapper">
                         <div className="divLeft">
