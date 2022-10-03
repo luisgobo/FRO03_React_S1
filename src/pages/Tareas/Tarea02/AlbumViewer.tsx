@@ -35,7 +35,7 @@ export const AlbumViewer: React.FC<AlbumViewerProps> = (
         <>
             <ul>
                 {albumList && albumList.map((album, index) => (
-                    <AlbumCardInfo
+                    <AlbumCardInfo key={album.id}
                         albumSelected= {albumSelectedId === album.id ? true : false}
                         index = {index}                        
                         albumInfo={album}
