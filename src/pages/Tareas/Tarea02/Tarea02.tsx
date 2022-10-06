@@ -45,17 +45,6 @@ export const Tarea02: React.FC = () => {
         }
     }
 
-    const onChange = (value: string) => {
-        if (albumList && photoList) {
-            const backupList = [...photoList];
-            setPhotoList(backupList);
-        }
-    };
-
-    const getImagesByAlbuId = (id: number) => {
-        return photoList?.find((image) => image.id === id);
-    };
-
     React.useEffect(() => {
         getData();
     }, []);
